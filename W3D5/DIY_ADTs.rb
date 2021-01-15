@@ -50,8 +50,17 @@ class Map
         end
     end
 
+    def get(key)
+        @array.each {|pair| return pair[1] if pair[0] == key}
+    end
+
     def delete(key)
         @array.reject! {|pair| key == pair[0]}
+    end
+
+    def show
+        
+
     end
 
 
