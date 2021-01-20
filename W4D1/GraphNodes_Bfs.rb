@@ -11,7 +11,6 @@ class GraphNode
     def add_neighbor(node)
         self.neighbors << node
     end
-
 end
 
 
