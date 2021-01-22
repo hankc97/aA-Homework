@@ -61,4 +61,49 @@ def nlogn_biggest_fish(fishes)
     fishes.merge_sort(&prc)[0]
 end
 
-p nlogn_biggest_fish(fishes)
+# p nlogn_biggest_fish(fishes)
+
+def linear_biggest_fish(fishes)
+    biggest_fish = fishes.first
+
+    fishes.each do |fish|
+        if biggest_fish.length < fish.length
+            biggest_fish = fish
+        end
+    end
+
+    biggest_fish
+end
+
+# p linear_biggest_fish(fishes)
+
+
+tiles_array = ["up", "right-up", "right", "right-down", "down", "left-down", "left",  "left-up" ]
+direction = "up"
+
+def slow_dance(direction, tiles_array)
+    tiles_array.each_with_index do |tile, index|
+        if tile == direction
+            return index 
+        end
+    end
+end
+
+p slow_dance("up", tiles_array)
+
+tiles_hash = {
+    "up" => 0,
+    "right-up" => 1,
+    "right"=> 2,
+    "right-down" => 3,
+    "down" => 4,
+    "left-down" => 5,
+    "left" => 6,
+    "left-up" => 7
+}
+
+def fast_dance(direction, tiles_hash)
+    tiles_hash[direction]
+end
+
+p fast_dance("left-up", tiles_hash)
