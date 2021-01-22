@@ -32,9 +32,9 @@ class Simon
     add_random_color
     @seq.each do |color|
       puts color
-      sleep 0.75
+      sleep(0.75)
       system("clear")
-      sleep 0.25
+      sleep(0.25)
     end
   end
 
@@ -59,4 +59,5 @@ class Simon
     @game_over = false
     @seq = []
   end
+
 end
